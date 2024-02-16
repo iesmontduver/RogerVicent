@@ -142,16 +142,16 @@ public class Formula1 {
         
 
         //Crear 10 pilots; 2 per escuderia
-        Pilot AlejndroManxa = new Pilot("A. Manxa", McLaren, 4);
-        Pilot RogerFerdesa = new Pilot("R. Ferdesa", McLaren, 14);
-        Pilot VicentChulia = new Pilot("Chulia", RedBull, 3);
-        Pilot LidiaLacomba = new Pilot("L. Lacomba", RedBull, 6);
-        Pilot IreneTorres = new Pilot("I. Torres", Alpine, 73);
-        Pilot MarcMarti = new Pilot("M. Marti", Alpine, 28);
-        Pilot AngelaLlopis = new Pilot("A. Llopis", AstonMartin, 18);
-        Pilot LuciaConstantino = new Pilot("L. Constantino", AstonMartin, 52);
-        Pilot MariluzOlmos = new Pilot("M. Olmos", Ferrari, 2);
-        Pilot LinaRosello = new Pilot("L. Rosello", Ferrari, 46);
+        Pilot AlejndroManxa = new Pilot();
+        Pilot RogerFerdesa = new Pilot();
+        Pilot VicentChulia = new Pilot();
+        Pilot LidiaLacomba = new Pilot();
+        Pilot IreneTorres = new Pilot();
+        Pilot MarcMarti = new Pilot();
+        Pilot AngelaLlopis = new Pilot();
+        Pilot LuciaConstantino = new Pilot();
+        Pilot MariluzOlmos = new Pilot();
+        Pilot LinaRosello = new Pilot();
         
 
         //Montar els 10 cotxes i afegir-los a la llista de cotxes
