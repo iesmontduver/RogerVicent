@@ -18,7 +18,7 @@ public class Escuderia {
         this.nom = Leer.leerTexto("Digues el nom de la escuderia");
         this.pressupost = Leer.leerDouble("Dis-me el pressupost de la escuderia");
     }
-
+ 
     public String getNom() {
         return nom;
     }
