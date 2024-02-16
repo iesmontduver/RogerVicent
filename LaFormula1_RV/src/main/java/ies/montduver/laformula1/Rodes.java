@@ -13,7 +13,7 @@ public class Rodes {
     private int numero;
     private String marca;
     private int tipo_neumatic; //1-Blando, 2-Medio , 3- Duro, 4- Lluvia, 5-Lluvia extrema
-    
+
     public Rodes(String marca) {
         this.marca = marca;
         this.numero = 4;
@@ -38,10 +38,35 @@ public class Rodes {
 
     /* TO DO: Tornarà un String segons el valor (int) de l’atribut tipo_neumatic*/
     public String getTipo_neumatic() {
-       return "";
+
+        String tiporodes;
+
+        switch (tipo_neumatic) {
+            case 1:
+                tiporodes = "BLANES";
+                break;
+            case 2:
+                tiporodes = "MITGES";
+                break;
+            case 3:
+                tiporodes = "DURES";
+                break;
+            case 4:
+                tiporodes = "de PLUJA";
+                break;
+            case 5:
+                tiporodes = "de PLUJA EXTREMA";
+                break;
+            default:
+                tiporodes = "DESCONEGUDES";
+
+        }
+
+        return tiporodes;
     }
 
     public void setTipo_neumatic(int tipo_neumatic) {
         this.tipo_neumatic = tipo_neumatic;
     }
+
 }

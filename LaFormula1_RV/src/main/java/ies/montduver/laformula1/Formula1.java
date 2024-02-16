@@ -84,7 +84,7 @@ public class Formula1 {
     }
 
     private static Circuit crearGranPremi() {
-        Circuit circuit = new Circuit(Leer.leerTextoConDialogo("Quin és el nom del circuit?"), Leer.leerTextoConDialogo("En quin pais es troba?"), Leer.leerTextoConDialogo("Quina ciutat?"), Integer.parseInt(Leer.leerTextoConDialogo("Indica la distància del circuit en metres")), Integer.parseInt(Leer.leerTextoConDialogo("Quantes voltes han de donar per a completar-lo?")));
+        Circuit circuit = new Circuit(Leer.leerTextoConDialogo("Quin és el nom del circuit?"), Leer.leerTextoConDialogo("En quin pais es troba?"), Leer.leerTextoConDialogo("Quina ciutat?"),Integer.parseInt(Leer.leerTextoConDialogo("Quant mesura el circuit (en metres) ")), Integer.parseInt(Leer.leerTextoConDialogo("Quantes voltes han de donar per a completar-lo?")));
 
         return circuit;
     }
@@ -121,36 +121,72 @@ public class Formula1 {
     }
 
     private static void crearEscuderies(List<Cotxe> cotxes, List<Box> pitLane) {
-        
-        /* TO DO: 
-           S’ha de completar el mètode per a crear instancies de: 
-            • les escuderies (5),
-            • els boxes  (5) per a cada escuderia,
-            • els pilots (10), dos pilots per cada escuderia
-            • els cotxes (10), un conduit per cadascun dels pilots.
-        
-            He deixat implementat un exemple de cada i com s'afegeix a les llistes de cotxes i el pitLane
-            
-        */
-        
-        //Crear 5 escuderies
-        Escuderia McLaren = new Escuderia("McLaren", 125000000.0);
+    
+        Escuderia McLaren = new Escuderia();
+        Escuderia RedBull = new Escuderia();
+        Escuderia Alpine = new Escuderia();
+        Escuderia AstonMartin = new Escuderia();
+        Escuderia Ferrari = new Escuderia();
         
         //Crear els boxes de cada escuderia i afegir-los al pitLane
         Box box_ML = new Box(McLaren, 12);
         pitLane.add(box_ML);
+        Box box_RB = new Box(RedBull, 12);
+        pitLane.add(box_RB);
+        Box box_AP = new Box(Alpine, 9);
+        pitLane.add(box_AP);
+        Box box_AM = new Box(AstonMartin, 11);
+        pitLane.add(box_AM);
+        Box box_FR = new Box(Ferrari, 10);
+        pitLane.add(box_FR);
         
 
         //Crear 10 pilots; 2 per escuderia
-        Pilot Norris = new Pilot("L. Norris", McLaren, 4);
+        Pilot AlejndroManxa = new Pilot("A. Manxa", McLaren, 4);
+        Pilot RogerFerdesa = new Pilot("R. Ferdesa", McLaren, 14);
+        Pilot VicentChulia = new Pilot("Chulia", RedBull, 3);
+        Pilot LidiaLacomba = new Pilot("L. Lacomba", RedBull, 6);
+        Pilot IreneTorres = new Pilot("I. Torres", Alpine, 73);
+        Pilot MarcMarti = new Pilot("M. Marti", Alpine, 28);
+        Pilot AngelaLlopis = new Pilot("A. Llopis", AstonMartin, 18);
+        Pilot LuciaConstantino = new Pilot("L. Constantino", AstonMartin, 52);
+        Pilot MariluzOlmos = new Pilot("M. Olmos", Ferrari, 2);
+        Pilot LinaRosello = new Pilot("L. Rosello", Ferrari, 46);
         
 
         //Montar els 10 cotxes i afegir-los a la llista de cotxes
-        Cotxe c4 = new Cotxe(McLaren, new Rodes("Michelín"), new Motor(), new Xasis(McLaren.getNom(), "F1", "Blanco"));
+        Cotxe c4 = new Cotxe(McLaren, new Rodes("Michelín"), new Motor(), new Xasis("McLaren", "F1", "Blanco", 500.0, 2.5 , 1.0));
         cotxes.add(c4);
+        Cotxe c14 = new Cotxe(McLaren, new Rodes("Michelín"), new Motor(), new Xasis("McLaren", "F1", "Blanco", 500.0, 2.5 , 1.0));
+        cotxes.add(c14);
+        Cotxe c3 = new Cotxe(RedBull, new Rodes("Michelín"), new Motor(), new Xasis("RedBull", "F1", "Blanco", 500.0, 2.5 , 1.0));
+        cotxes.add(c3);
+        Cotxe c6 = new Cotxe(RedBull, new Rodes("Michelín"), new Motor(), new Xasis("RedBull", "F1", "Blanco", 500.0, 2.5 , 1.0));
+        cotxes.add(c6);
+        Cotxe c73 = new Cotxe(Alpine, new Rodes("Michelín"), new Motor(), new Xasis("Alpine", "F1", "Blanco", 500.0, 2.5 , 1.0));
+        cotxes.add(c73);
+        Cotxe c28 = new Cotxe(Alpine, new Rodes("Michelín"), new Motor(), new Xasis("Alpine", "F1", "Blanco", 500.0, 2.5 , 1.0));
+        cotxes.add(c28);
+        Cotxe c18 = new Cotxe(AstonMartin, new Rodes("Michelín"), new Motor(), new Xasis("AstonMartin", "F1", "Blanco", 500.0, 2.5 , 1.0));
+        cotxes.add(c18);
+        Cotxe c52 = new Cotxe(AstonMartin, new Rodes("Michelín"), new Motor(), new Xasis("AstonMartin", "F1", "Blanco", 500.0, 2.5 , 1.0));
+        cotxes.add(c52);
+        Cotxe c2 = new Cotxe(Ferrari, new Rodes("Michelín"), new Motor(), new Xasis("Ferrari", "F1", "Blanco", 500.0, 2.3 , 1.0));
+        cotxes.add(c2);
+        Cotxe c46 = new Cotxe(Ferrari, new Rodes("Michelín"), new Motor(), new Xasis("Ferrari", "F1", "Blanco", 500.0, 2.3 , 1.0));
+        cotxes.add(c46);
+        
        
         //Assignar un cotxe a cada pilot 
-        c4.setPilot(Norris);
-        
+        c4.setPilot(AlejndroManxa);
+        c14.setPilot(RogerFerdesa);
+        c3.setPilot(VicentChulia);
+        c6.setPilot(LidiaLacomba);
+        c73.setPilot(IreneTorres);
+        c28.setPilot(MarcMarti);
+        c18.setPilot(AngelaLlopis);
+        c52.setPilot(LuciaConstantino);
+        c2.setPilot(MariluzOlmos);
+        c46.setPilot(LinaRosello);
     }    
 }
