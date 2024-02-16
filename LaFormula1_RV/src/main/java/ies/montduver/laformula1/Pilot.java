@@ -16,10 +16,10 @@ public class Pilot {
     int punts;
     Double sou;
 
-    public Pilot(String nom, Escuderia Escuderia, int numero) {
-        this.nom = nom;
-        this.escuderia = Escuderia;
-        this.numero = numero;
+    public Pilot() {
+        this.nom = Leer.leerTexto("Dis-me el nom del pilot:");
+        this.escuderia = escuderia;
+        this.numero = Leer.leerEntero("Dism-me el numero del pilot: ");
     }
 
     public String getNom() {

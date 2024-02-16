@@ -15,8 +15,8 @@ public class Escuderia {
     int punts;
 
     public Escuderia() {
-        this.nom = Leer.leerTexto("Digues el nom de la escuderia");
-        this.pressupost = Leer.leerDouble("Dis-me el pressupost de la escuderia");
+        this.nom = Leer.leerTexto("Digues el nom de la escuderia:");
+        this.pressupost = Leer.leerDouble("Dis-me el pressupost de la escuderia:");
     }
  
     public String getNom() {
